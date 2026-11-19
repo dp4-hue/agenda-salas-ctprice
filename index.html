@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CT PRICE · Salas de Reunião</title>
+<meta name="description" content="Agenda das salas de reunião Brasil, Itália e Dubai — CT Price Organização Contábil">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Identidade visual igual à ferramenta "Alvarás e licenças — CT Price" */
+:root {
+  --brand: #0A6E35; --brand-2: #5BC27F; --brand-ink: #FFFFFF; --side: #0A1E26; --side-ink: #FFFFFF;
+  --bg: #F3F5F9; --surface: #FFFFFF; --surface-2: #F8FAFC; --ink: #101828; --muted: #5E6B7E;
+  --line: #E4E8EF; --line-strong: #CDD4DF;
+  --accent: var(--brand); --on-accent: #FFFFFF; --accent-soft: color-mix(in srgb, var(--brand) 9%, white);
+  --danger: #C8281C; --focus: var(--brand-2);
+  --brasil: #1E8A4F; --italia: #C2552F; --dubai: #A87B12; --on-room: #FFFFFF;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, .05); --shadow: 0 18px 48px rgba(16, 24, 40, .18);
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1420; --surface: #151D2B; --surface-2: #1A2333; --ink: #E7ECF3; --muted: #98A4B5;
+    --line: #26303F; --line-strong: #36414F;
+    --accent: color-mix(in srgb, var(--brand) 45%, white); --on-accent: #0E1420;
+    --accent-soft: color-mix(in srgb, var(--brand) 35%, #151D2B); --danger: #FF8A80;
+    --shadow-sm: none; --shadow: 0 18px 48px rgba(0, 0, 0, .55); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1420; --surface: #151D2B; --surface-2: #1A2333; --ink: #E7ECF3; --muted: #98A4B5;
+  --line: #26303F; --line-strong: #36414F;
+  --accent: color-mix(in srgb, var(--brand) 45%, white); --on-accent: #0E1420;
+  --accent-soft: color-mix(in srgb, var(--brand) 35%, #151D2B); --danger: #FF8A80;
+  --shadow-sm: none; --shadow: 0 18px 48px rgba(0, 0, 0, .55); color-scheme: dark;
+}
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--ink); font: 14.5px/1.5 "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--side); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+[hidden] { display: none !important; }
+h1 { font-size: 22px; line-height: 1.2; margin: 0; font-weight: 800; letter-spacing: -.02em; }
+h2 { font-size: 17px; margin: 2px 0 14px; font-weight: 800; letter-spacing: -.01em; }
+.eyebrow { margin: 0; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.sub { margin: 2px 0 0; font-size: 13.5px; color: var(--muted); }
+
+main { min-width: 0; }
+.content { padding: 22px clamp(14px, 3.4vw, 56px) 48px; padding-right: max(clamp(14px, 3.4vw, 56px), env(safe-area-inset-right, 0px)); padding-left: max(clamp(14px, 3.4vw, 56px), env(safe-area-inset-left, 0px)); }
+/* Banner padrão CT Price + menu que entra na imagem */
+.hero { position: relative; height: clamp(210px, 20vw, 310px); overflow: hidden; isolation: isolate;
+  background: radial-gradient(120% 140% at 85% 30%, #1FA463 0%, #0B6B3C 38%, #07492A 100%); }
+.hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+.hero picture img { object-fit: cover; object-position: 78% 55%; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(5, 52, 30, .55) 0%, rgba(5, 52, 30, .25) 38%, rgba(5, 52, 30, 0) 60%);
+}
+.hero-in {
+  height: 100%; display: flex; align-items: center; gap: clamp(16px, 2.2vw, 30px);
+  padding: 0 clamp(18px, 4vw, 64px) 34px; padding-left: max(clamp(18px, 4vw, 64px), env(safe-area-inset-left, 0px));
+}
+.hero-logo { width: clamp(180px, 21vw, 320px); height: auto; display: block; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .18)); flex: none; }
+.hero-wordmark { color: #fff; font-weight: 800; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; letter-spacing: -.01em; }
+.hero-wordmark small { display: block; font-size: .4em; font-weight: 600; letter-spacing: .01em; margin-top: 4px; }
+.hero-div { width: 2px; height: clamp(54px, 6vw, 84px); background: rgba(255, 255, 255, .75); border-radius: 2px; flex: none; }
+.hero-title { margin: 0; color: #fff; font-size: clamp(18px, 1.9vw, 27px); line-height: 1.1; font-weight: 700; letter-spacing: -.01em; opacity: .95; }
+
+.menubar {
+  position: relative; z-index: 2; margin-top: -30px; background: #0B5A33;
+  border-radius: 18px 18px 0 0; box-shadow: 0 -6px 24px rgba(0, 0, 0, .18);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px 20px;
+  padding: 9px clamp(14px, 3.4vw, 56px);
+  padding-left: max(clamp(14px, 3.4vw, 56px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(14px, 3.4vw, 56px), env(safe-area-inset-right, 0px));
+}
+.tabs { display: flex; align-items: center; gap: 6px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tab {
+  display: inline-flex; align-items: center; gap: 10px; border: 0; background: transparent; color: #fff; cursor: pointer;
+  padding: 11px 20px; border-radius: 12px; font-size: 16px; font-weight: 700; white-space: nowrap; flex: none;
+}
+.tab svg { width: 22px; height: 22px; flex: none; }
+.tab .sh { display: none; }
+.tab:hover { background: rgba(255, 255, 255, .1); }
+.tab[aria-pressed="true"] { background: #fff; color: #0B5A33; font-weight: 800; box-shadow: 0 4px 14px rgba(0, 0, 0, .18); }
+.tab:focus-visible { outline-color: #fff; }
+.sep { width: 2px; height: 30px; background: rgba(255, 255, 255, .45); border-radius: 2px; flex: none; margin: 0 4px; }
+.legend-bar { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; color: #fff; font-size: 13.5px; font-weight: 700; flex: none; }
+.legend-bar li { display: flex; align-items: center; gap: 7px; }
+.legend-bar i { width: 11px; height: 11px; border-radius: 4px; background: var(--c); box-shadow: 0 0 0 2px rgba(255, 255, 255, .85); }
+@media (max-width: 1100px) { .legend-bar { display: none; } }
+@media (max-width: 700px) {
+  .hero { height: 176px; }
+  .hero picture img { object-position: 82% 55%; }
+  .hero::before { background: linear-gradient(90deg, rgba(5, 52, 30, .78) 0%, rgba(5, 52, 30, .45) 60%, rgba(5, 52, 30, .1) 100%); }
+  .hero-in { flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; padding-bottom: 30px; }
+  .hero-logo { width: 160px; }
+  .hero-div { display: none; }
+  .hero-title { font-size: 17px; }
+  .hero-title br { display: none; }
+  .menubar { border-radius: 14px 14px 0 0; padding: 7px 8px; }
+  .tab { padding: 9px 12px; font-size: 14px; gap: 7px; }
+  .tab svg { width: 18px; height: 18px; }
+  .sep { display: none; }
+  .tab .lg { display: none; }
+  .tab .sh { display: inline; }
+  .tabs { width: 100%; justify-content: space-between; }
+}
+
+/* Cartão da agenda no padrão das ferramentas CT Price */
+.agenda-card { overflow: visible; }
+.card-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 20px 22px 16px; }
+.ico {
+  width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; flex: none;
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface)); color: var(--brand);
+}
+.ico svg { width: 28px; height: 28px; }
+.ch-txt { flex: 1 1 240px; min-width: 0; }
+.ctitle { margin: 0; font-size: 21px; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; color: var(--brand); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ctitle, :root:not([data-theme="light"]) .ico { color: var(--accent); } }
+:root[data-theme="dark"] .ctitle, :root[data-theme="dark"] .ico { color: var(--accent); }
+.csub { margin: 2px 0 0; font-size: 14.5px; color: var(--muted); font-weight: 600; }
+.csub::first-letter { text-transform: uppercase; }
+.csub2 { margin: 1px 0 0; font-size: 12.5px; color: var(--muted); }
+.agenda-card #status { margin: 0 22px 12px; }
+.agenda-card .legend-m { margin: 0 22px 12px; }
+.board { overflow-x: auto; border-top: 1px solid var(--line); border-radius: 0 0 var(--radius) var(--radius); }
+@media (max-width: 600px) {
+  .card-head { padding: 16px 14px 12px; gap: 12px; }
+  .ico { width: 44px; height: 44px; }
+  .ctitle { font-size: 18px; }
+  .agenda-card #status, .agenda-card .legend-m { margin-inline: 14px; }
+}
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 14px; }
+.nav { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.day { margin: 0; font-weight: 800; font-size: 16px; }
+.day::first-letter { text-transform: uppercase; }
+#status { margin: 0; font-size: 13px; color: var(--danger); font-weight: 600; }
+#status:empty { display: none; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm);
+  border-radius: 10px; padding: 8px 14px; font-weight: 700; font-size: 13.5px; cursor: pointer; white-space: nowrap;
+}
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.btn.primary:hover { filter: brightness(1.12); }
+.btn.cta {
+  padding: 10px 18px; font-size: 14.5px; font-weight: 800; border-radius: 12px; border: 0; color: #fff;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand) 88%, white), var(--brand));
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--brand) 38%, transparent);
+}
+.btn.cta:hover { filter: brightness(1.08); }
+.btn.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 45%, transparent); }
+.btn.danger.solid { background: var(--danger); color: #fff; border-color: transparent; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn[aria-label] { min-width: 38px; padding-inline: 10px; font-size: 18px; line-height: 1; }
+
+input, select {
+  width: 100%; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; padding: 8px 11px; font-size: 14px;
+}
+input[type="date"] { width: auto; }
+label { display: grid; gap: 5px; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+
+/* Agenda do dia: 08:00 às 17:30, com a pausa de almoço 11:30–13:00 */
+.b-grid {
+  display: grid; grid-template-columns: 58px repeat(3, minmax(124px, 1fr)); min-width: 436px;
+}
+.b-h {
+  display: flex; align-items: center; gap: 8px; padding: 12px; font-weight: 800; background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.b-h::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; }
+.b-h.corner { padding: 0; }
+.b-h.corner::before { display: none; }
+.b-body { height: 532px; } /* 19 linhas de 30 min × 28 px: 08:00 a 17:30 */
+.b-times { position: relative; }
+.tl {
+  position: absolute; right: 8px; transform: translateY(-50%); font: 600 11px/1 "Manrope", system-ui, sans-serif; font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.col {
+  position: relative; border-left: 1px solid var(--line); cursor: cell; background-color: var(--surface);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--line) 27px 28px);
+}
+.col:hover { background-color: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.lunch {
+  position: absolute; left: 0; right: 0; z-index: 0; pointer-events: none;
+  display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--muted);
+  background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--muted) 14%, transparent) 6px 7px);
+}
+.bk {
+  position: absolute; left: 4px; right: 4px; z-index: 1; border: 0; border-radius: 8px;
+  background: var(--c); color: var(--on-room); padding: 4px 7px; text-align: left; cursor: pointer;
+  display: flex; flex-direction: column; gap: 1px; overflow: hidden; box-shadow: 0 1px 2px rgba(0, 0, 0, .18);
+  font-size: 12px; line-height: 1.3;
+}
+.bk strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.bk span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11px; opacity: .92; }
+.bk.is-sel { outline: 2px solid var(--ink); outline-offset: 1px; }
+.empty-day { padding: 14px 16px; margin: 0; font-size: 13px; color: var(--muted); }
+
+/* Agenda do mês */
+.m-wrap { min-width: 436px; }
+.m-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.m-dow {
+  background: var(--surface-2); padding: 10px 8px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); border-bottom: 1px solid var(--line); text-align: left;
+}
+.m-cell {
+  min-height: 116px; min-width: 0; overflow: hidden; border: 0; border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line); background: var(--surface); color: var(--ink); text-align: left;
+  padding: 8px 7px; display: flex; flex-direction: column; gap: 4px; cursor: pointer;
+}
+.m-grid > .m-cell:nth-child(7n + 1) { border-left: 0; }
+.m-cell.is-out { background: var(--surface-2); cursor: default; }
+.m-cell:not(.is-out):hover { background: color-mix(in srgb, var(--accent) 5%, var(--surface)); }
+.m-cell.is-sel { box-shadow: inset 0 0 0 2px var(--accent); }
+.m-cell.is-wknd:not(.is-out) { background: color-mix(in srgb, var(--surface-2) 70%, var(--surface)); }
+.m-num {
+  font-weight: 800; font-size: 12.5px; color: var(--muted); width: 26px; height: 26px; display: grid; place-items: center;
+  border-radius: 50%; margin: -2px 0 2px -2px; font-variant-numeric: tabular-nums; flex: none;
+}
+.m-cell.is-today .m-num { background: var(--brand); color: #fff; }
+.chip {
+  display: flex; align-items: center; gap: 5px; min-width: 0; padding: 3px 7px 3px 7px; border-radius: 7px;
+  background: color-mix(in srgb, var(--c) 15%, var(--surface)); box-shadow: inset 3px 0 0 var(--c);
+  font-size: 11.5px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden;
+}
+.chip .av { width: 18px; height: 18px; font-size: 8px; }
+.chip b { font-weight: 800; font-variant-numeric: tabular-nums; flex: none; }
+.chip span { overflow: hidden; text-overflow: ellipsis; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip { background: color-mix(in srgb, var(--c) 30%, var(--surface)); } }
+:root[data-theme="dark"] .chip { background: color-mix(in srgb, var(--c) 30%, var(--surface)); }
+.more { font-size: 11.5px; font-weight: 700; color: var(--muted); padding-left: 4px; }
+@media (max-width: 600px) {
+  .m-wrap { min-width: 0; }
+  .m-dow { padding: 8px 4px; font-size: 10px; letter-spacing: .02em; }
+  .m-cell { min-height: 64px; padding: 5px 4px; gap: 3px; }
+  .m-num { width: 22px; height: 22px; font-size: 11.5px; }
+  .chip { padding: 0; height: 6px; border-radius: 3px; background: var(--c); box-shadow: none; }
+  .chip b, .chip span, .chip .av { display: none; }
+  .more { font-size: 10px; padding: 0; }
+}
+.hint { margin: 10px 2px 0; font-size: 12px; color: var(--muted); }
+
+/* Painel de reserva */
+/* Painel lateral (gaveta), como na ferramenta de Alvarás */
+.scrim { position: fixed; inset: 0; background: rgba(10, 16, 28, .45); z-index: 20; }
+.drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); z-index: 21; background: var(--surface);
+  box-shadow: var(--shadow); display: flex; flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  animation: slide .18s ease-out;
+}
+@keyframes slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .drawer { animation: none; } }
+.dhead { display: flex; align-items: flex-start; gap: 12px; padding: 18px 22px 14px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+.dhead .t { flex: 1; min-width: 0; }
+.dhead h2 { margin: 2px 0 0; font-size: 19px; }
+.xbtn { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--line-strong); background: var(--surface); border-radius: 10px; cursor: pointer; color: var(--muted); font-size: 20px; line-height: 1; flex: none; }
+.xbtn:hover { color: var(--ink); border-color: var(--muted); }
+.dbody { flex: 1; overflow-y: auto; padding: 18px 22px 32px; }
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 30;
+  background: var(--side); color: #fff; padding: 11px 18px; border-radius: 12px; font-weight: 700; font-size: 14px;
+  box-shadow: var(--shadow); display: flex; align-items: center; gap: 10px; max-width: calc(100% - 32px);
+}
+.toast::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--brand-2); flex: none; }
+.legend-m { display: none; list-style: none; margin: 0 0 12px; padding: 0; gap: 14px; flex-wrap: wrap; font-size: 13px; font-weight: 700; }
+.legend-m li { display: flex; align-items: center; gap: 7px; }
+.legend-m i { width: 11px; height: 11px; border-radius: 4px; background: var(--c); }
+@media (max-width: 1100px) { .legend-m { display: flex; } }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+form { display: grid; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.msg { min-height: 1.3em; margin: 0; font-size: 13px; color: var(--muted); }
+.msg.err { color: var(--danger); }
+.msg.ok { color: var(--accent); }
+/* Avatares e seletor de analista */
+.av { flex: none; border-radius: 50%; object-fit: cover; display: inline-grid; place-items: center; overflow: hidden;
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface)); color: var(--accent); font-weight: 700; }
+.av.sm { width: 18px; height: 18px; font-size: 8px; }
+.av.md { width: 32px; height: 32px; font-size: 12px; }
+.av.lg { width: 72px; height: 72px; font-size: 24px; }
+.bk .row { display: flex; align-items: center; gap: 5px; min-width: 0; }
+.bk .row .av { box-shadow: 0 0 0 1.5px rgba(255,255,255,.85); }
+.picker { position: relative; }
+.pick-btn { width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; cursor: pointer;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px; padding: 6px 10px; min-height: 46px; font-size: 14px; font-weight: 500; }
+.pick-btn .ph { color: var(--muted); }
+.pick-btn::after { content: "▾"; margin-left: auto; color: var(--muted); }
+.pop { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 20; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow), 0 12px 28px rgba(0,0,0,.12); padding: 8px; }
+.pop input { margin-bottom: 6px; }
+.opts { list-style: none; margin: 0; padding: 0; max-height: 300px; overflow-y: auto; }
+.opts li { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: 8px; cursor: pointer; font-size: 14px; color: var(--ink); font-weight: 500; }
+.opts li.is-act { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.opts li[aria-selected="true"] { font-weight: 700; }
+.opts .none { color: var(--muted); cursor: default; font-weight: 400; }
+.who { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; margin: 0 0 16px; font-size: 14px; }
+.facts dt { color: var(--muted); font-weight: 500; }
+.facts dd { margin: 0; font-weight: 600; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <picture>
+    <source media="(max-width: 700px)" srcset="banner-960.jpg">
+    <img src="banner-1800.jpg" alt="" fetchpriority="high" onerror="this.closest('picture').remove()">
+  </picture>
+  <div class="hero-in">
+    <img class="hero-logo" src="logo-branco.png" alt="CT Price Organização Contábil" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="hero-wordmark" hidden>CT PRICE<small>Organização Contábil</small></span>
+    <span class="hero-div" aria-hidden="true"></span>
+    <h1 class="hero-title">Salas de <br>reunião</h1>
+  </div>
+</header>
+
+<nav class="menubar" aria-label="Menu">
+  <div class="tabs">
+    <button type="button" class="tab" data-view="day" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3M8 14h4"/></svg><span class="lg">Agenda do dia</span><span class="sh">Dia</span></button>
+    <i class="sep" aria-hidden="true"></i>
+    <button type="button" class="tab" data-view="month" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/></svg><span class="lg">Agenda do mês</span><span class="sh">Mês</span></button>
+    <i class="sep" aria-hidden="true"></i>
+    <button type="button" class="tab" id="new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v8M8 12h8"/></svg><span class="lg">Novo agendamento</span><span class="sh">Novo</span></button>
+  </div>
+  <ul class="legend-bar" aria-label="Cores das salas">
+    <li style="--c: var(--brasil)"><i></i>Sala Brasil</li>
+    <li style="--c: var(--italia)"><i></i>Sala Itália</li>
+    <li style="--c: var(--dubai)"><i></i>Sala Dubai</li>
+  </ul>
+</nav>
+
+<main class="content">
+<section class="card agenda-card" aria-labelledby="card-title">
+  <div class="card-head">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5"/><path d="M3.5 9.5h17M8 3v3M16 3v3"/><path d="M8.5 14.5l2 2 4-4"/></svg></span>
+    <div class="ch-txt">
+      <h2 class="ctitle" id="card-title">Agenda do dia</h2>
+      <p class="csub" id="day-label"></p>
+      <p class="csub2">Funcionamento: 08:00 às 11:30 e 13:00 às 17:30</p>
+    </div>
+    <div class="nav">
+      <button class="btn" id="prev" type="button" aria-label="Anterior">&lsaquo;</button>
+      <input type="date" id="date-input" aria-label="Escolher data">
+      <button class="btn" id="next" type="button" aria-label="Próximo">&rsaquo;</button>
+      <button class="btn" id="today" type="button">Hoje</button>
+    </div>
+  </div>
+  <p id="status" role="status"></p>
+  <ul class="legend-m" aria-label="Cores das salas">
+    <li style="--c: var(--brasil)"><i></i>Sala Brasil</li>
+    <li style="--c: var(--italia)"><i></i>Sala Itália</li>
+    <li style="--c: var(--dubai)"><i></i>Sala Dubai</li>
+  </ul>
+  <div class="board">
+    <div id="day-view">
+      <div class="b-grid" id="grid">
+        <div class="b-h corner"></div>
+        <div class="b-h" style="--c: var(--brasil)">Sala Brasil</div>
+        <div class="b-h" style="--c: var(--italia)">Sala Itália</div>
+        <div class="b-h" style="--c: var(--dubai)">Sala Dubai</div>
+
+        <div class="b-body b-times" id="times"></div>
+        <div class="b-body col" data-room="brasil"></div>
+        <div class="b-body col" data-room="italia"></div>
+        <div class="b-body col" data-room="dubai"></div>
+      </div>
+      <p class="empty-day" id="empty">Nenhuma reserva neste dia. Clique em um horário livre para agendar.</p>
+    </div>
+
+    <div id="month-view" hidden>
+      <div class="m-wrap">
+        <div class="m-grid" id="dow"></div>
+        <div class="m-grid" id="month-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<p class="hint">Clique em um horário livre para agendar. Clique em uma reserva para ver os detalhes. No mês, clique em um dia para abrir a agenda dele.</p>
+</main>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-title" hidden>
+  <div class="dhead">
+    <div class="t">
+      <p class="eyebrow" id="dr-eyebrow">Nova reserva</p>
+      <h2 id="dr-title">Agendar sala</h2>
+    </div>
+    <button type="button" class="xbtn" id="dr-close" aria-label="Fechar">&times;</button>
+  </div>
+  <div class="dbody">
+    <div id="form-view">
+      <form id="f" novalidate>
+        <label>Sala <select id="f-room"></select></label>
+        <label>Data <input type="date" id="f-date"></label>
+        <div class="pair">
+          <label>Início <select id="f-start"></select></label>
+          <label>Término <select id="f-end"></select></label>
+        </div>
+        <div class="picker" id="picker">
+          <label id="pick-label" for="pick-btn">Analista</label>
+          <button type="button" class="pick-btn" id="pick-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="pick-label pick-btn"><span class="ph">Escolha o analista</span></button>
+          <div class="pop" id="pop" hidden>
+            <input id="pick-q" type="search" placeholder="Buscar pelo nome" autocomplete="off" aria-label="Buscar analista" aria-controls="opts" role="combobox" aria-expanded="true" aria-autocomplete="list">
+            <ul class="opts" id="opts" role="listbox" aria-label="Analistas"></ul>
+          </div>
+        </div>
+        <label>Assunto <input id="f-title" maxlength="80" placeholder="Ex.: Reunião com cliente"></label>
+        <div class="actions"><button class="btn primary" id="save" type="submit">Reservar sala</button></div>
+        <p class="msg" id="msg" role="alert"></p>
+      </form>
+    </div>
+
+    <div id="detail-view" hidden>
+      <div class="who" id="d-who"></div>
+      <dl class="facts">
+        <dt>Sala</dt><dd id="d-room"></dd>
+        <dt>Quando</dt><dd id="d-when"></dd>
+        <dt>Analista</dt><dd id="d-name"></dd>
+      </dl>
+      <div class="actions">
+        <button class="btn" id="d-back" type="button">Fechar</button>
+        <button class="btn danger" id="d-cancel" type="button">Cancelar reserva</button>
+        <button class="btn danger solid" id="d-confirm" type="button" hidden>Confirmar cancelamento</button>
+        <button class="btn" id="d-keep" type="button" hidden>Manter reserva</button>
+      </div>
+    </div>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const ROOMS = [
+  { id: 'brasil', name: 'Sala Brasil' },
+  { id: 'italia', name: 'Sala Itália' },
+  { id: 'dubai', name: 'Sala Dubai' },
+];
+// Funcionamento em minutos desde 00:00: manhã 08:00–11:30, tarde 13:00–17:30
+const WINDOWS = [[480, 690], [780, 1050]];
+const START = 480, END = 1050, STEP = 30, ROW = 28;
+// Analistas e fotos (fotos/<arquivo>.jpg). Sem foto: mostra as iniciais.
+const ANALYSTS = [
+  'Alexandre Souza', 'Anderson Ferreira', 'Andre Castro', 'Andrei Araujo', 'Bruno Eduardo', 'Carolaine Antunes',
+  'Claudio Kamiya', 'Daniella Diniz', 'Deivison Zotino', 'Dyovana Santos', 'Edynara Cecilia', 'Everton Lima',
+  'Fabio Pereira', 'Filipe Pereira', 'Hugo Jad', 'Jessica Souza', 'João Pedro', 'Juliana Greguer', 'Juliane Cabral',
+  'Julio Ajala', 'Kele Cristina', 'Leandro Rodrigues', 'Luan Lima', 'Lucas Rocha', 'Luciano Penzo', 'Luis Otávio',
+  'Luiz Henrique', 'Marcelo Barbosa', 'Maria Luiza', 'Matheus Neves', 'Matheus Ortiz', 'Mauricio Moura',
+  'Michael Miranda', 'Milton Valter', 'Otávio José', 'Patricia Alvares', 'Patrick Petenon', 'Patrick Souza',
+  'Priscila Oliveira', 'Rangel Jara', 'Samuel Xavier', 'Silvana Maria', 'Thais Silva', 'Thiago Grefe',
+  'Tiago Macedo', 'Walter Medeiros', 'Welton Aredes', 'Ysabella Barbosa',
+];
+const PHOTOS = new Set(['alexandre-souza', 'anderson-ferreira', 'andre-castro', 'andrei-araujo', 'bruno-eduardo',
+  'carolaine-antunes', 'claudio-kamiya', 'daniella-diniz', 'deivison-zotino', 'dyovana-santos', 'edynara-cecilia',
+  'everton-lima', 'filipe-pereira', 'jessica-souza', 'joao-pedro', 'juliane-cabral', 'julio-ajala', 'kele-cristina',
+  'leandro-rodrigues', 'luan-lima', 'lucas-rocha', 'luciano-penzo', 'luiz-henrique', 'maria-luiza', 'mauricio-moura',
+  'michael-miranda', 'milton-valter', 'patricia-alvares', 'priscila-oliveira', 'rangel-jara', 'samuel-xavier',
+  'silvana-maria', 'thais-silva', 'thiago-grefe', 'welton-aredes', 'matheus-ortiz', 'patrick-souza', 'patrick-petenon']);
+const fold = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const slugOf = n => fold(n).trim().split(/\s+/).join('-');
+const initials = n => String(n || '?').trim().split(/\s+/).filter(Boolean).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+// Se a foto ainda não estiver no site, mostra as iniciais
+function avFail(img) {
+  const sp = document.createElement('span');
+  sp.className = img.className;
+  sp.setAttribute('aria-hidden', 'true');
+  sp.textContent = img.dataset.ini || '';
+  img.replaceWith(sp);
+}
+function avatar(name, size) {
+  const sl = slugOf(name);
+  if (PHOTOS.has(sl)) return `<img class="av ${size}" src="fotos/${sl}.jpg" alt="" loading="lazy" data-ini="${esc(initials(name))}" onerror="avFail(this)">`;
+  return `<span class="av ${size}" aria-hidden="true">${esc(initials(name))}</span>`;
+}
+const DOW = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const toHHMM = m => pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+const toMin = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+const isoOf = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const todayIso = () => isoOf(new Date());
+const nowMin = () => { const n = new Date(); return n.getHours() * 60 + n.getMinutes(); };
+const shift = (iso, n) => { const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return isoOf(d); };
+const roomName = id => (ROOMS.find(r => r.id === id) || {}).name || id;
+const fmtDate = iso => new Date(iso + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const windowOf = m => WINDOWS.find(([a, b]) => m >= a && m < b) || null;
+
+let selDate = todayIso();
+let view = 'day';
+let bookings = [];
+let db = null;
+let loaded = false;
+let mode = 'form';
+let selId = null;
+let confirming = false;
+let busy = false;
+
+function errText(code) {
+  switch (code) {
+    case 'invalid_argument': return 'Não foi possível salvar. Confira com o administrador se você tem permissão para agendar.';
+    case 'quota_exceeded': return 'A agenda atingiu o limite de registros. Avise o administrador.';
+    case 'revoked':
+    case 'not_granted':
+    case 'capability_disabled':
+    case 'capability_removed': return 'Você pode ver a agenda, mas não tem permissão para agendar nesta visualização.';
+    case 'unavailable': return 'Sem conexão no momento. Tente de novo.';
+    default: return 'Erro ao salvar. Tente de novo.';
+  }
+}
+function setStatus(text) { $('#status').textContent = text || ''; }
+function showMsg(text, isErr) {
+  const m = $('#msg');
+  m.textContent = text || '';
+  m.className = 'msg' + (text ? (isErr ? ' err' : ' ok') : '');
+}
+
+// Só oferece horários dentro do funcionamento. O término fica limitado ao fim do período da manhã ou da tarde.
+function fillStarts() {
+  let s = '';
+  for (let m = START; m < END; m += STEP) if (windowOf(m)) s += `<option value="${toHHMM(m)}">${toHHMM(m)}</option>`;
+  $('#f-start').innerHTML = s;
+}
+function fillEnds(startMin) {
+  const w = windowOf(startMin);
+  let e = '';
+  if (w) for (let m = startMin + STEP; m <= w[1]; m += STEP) e += `<option value="${toHHMM(m)}">${toHHMM(m)}</option>`;
+  $('#f-end').innerHTML = e;
+}
+
+function fillSelects() {
+  $('#f-room').innerHTML = ROOMS.map(r => `<option value="${r.id}">${r.name}</option>`).join('');
+  fillStarts();
+  $('#f-date').min = todayIso();
+  let t = '';
+  for (let m = START; m <= 1020; m += 60) t += `<span class="tl" style="top:${(m - START) / STEP * ROW}px">${toHHMM(m)}</span>`;
+  $('#times').innerHTML = t;
+  const dow = DOW.map(d => `<div class="m-dow">${d}</div>`).join('');
+  $('#dow').innerHTML = dow;
+}
+
+function renderBoard() {
+  const isMonth = view === 'month';
+  $('#day-view').hidden = isMonth;
+  $('#month-view').hidden = !isMonth;
+  document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+  $('#date-input').value = selDate;
+  $('#card-title').textContent = isMonth ? 'Agenda do mês' : 'Agenda do dia';
+  if (isMonth) { renderMonth(); return; }
+
+  $('#day-label').textContent = new Date(selDate + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
+  const day = bookings.filter(b => b.date === selDate);
+  const lunchTop = (690 - START) / STEP * ROW, lunchH = (780 - 690) / STEP * ROW;
+  const lunch = `<div class="lunch" style="top:${lunchTop}px;height:${lunchH}px" aria-hidden="true">Almoço</div>`;
+  for (const r of ROOMS) {
+    const col = document.querySelector(`.col[data-room="${r.id}"]`);
+    col.innerHTML = lunch + day.filter(b => b.room === r.id).map(b => {
+      const s = toMin(b.start), e = toMin(b.end);
+      const top = (s - START) / STEP * ROW + 1;
+      const h = (e - s) / STEP * ROW - 2;
+      return `<button type="button" class="bk${selId === b.id ? ' is-sel' : ''}" data-id="${esc(b.id)}" style="--c: var(--${r.id}); top:${top}px; height:${h}px">` +
+        `<strong>${esc(b.title || 'Reunião')}</strong><span class="row">${avatar(b.name, 'sm')}<span>${esc(b.start)}–${esc(b.end)} · ${esc(b.name)}</span></span></button>`;
+    }).join('');
+  }
+  $('#empty').hidden = day.length > 0;
+}
+
+function renderMonth() {
+  const d = new Date(selDate + 'T12:00:00');
+  const y = d.getFullYear(), m = d.getMonth();
+  $('#day-label').textContent = d.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+  const first = new Date(y, m, 1).getDay();
+  const days = new Date(y, m + 1, 0).getDate();
+  const byDay = {};
+  for (const b of bookings) (byDay[b.date] ||= []).push(b);
+  const today = todayIso();
+  let cells = '';
+  for (let i = 0; i < first; i++) cells += '<div class="m-cell is-out" aria-hidden="true"></div>';
+  for (let n = 1; n <= days; n++) {
+    const iso = isoOf(new Date(y, m, n));
+    const list = (byDay[iso] || []).slice().sort((a, b) => (a.start < b.start ? -1 : 1));
+    const chips = list.slice(0, 3).map(b => {
+      const tip = `${roomName(b.room)} · ${b.start}–${b.end} · ${b.name}${b.title ? ' · ' + b.title : ''}`;
+      return `<span class="chip" style="--c: var(--${b.room})" title="${esc(tip)}">${avatar(b.name, 'sm')}<b>${esc(b.start)}</b><span>${esc(String(b.name || '').split(' ')[0])}</span></span>`;
+    }).join('');
+    const more = list.length > 3 ? `<span class="more">+${list.length - 3} mais</span>` : '';
+    const dow = (first + n - 1) % 7;
+    cells += `<button type="button" class="m-cell${dow === 0 || dow === 6 ? ' is-wknd' : ''}${iso === today ? ' is-today' : ''}${iso === selDate ? ' is-sel' : ''}" data-date="${iso}" aria-label="${esc(fmtDate(iso))}, ${list.length} reserva${list.length === 1 ? '' : 's'}">` +
+      `<span class="m-num">${n}</span>${chips}${more}</button>`;
+  }
+  const tail = (7 - ((first + days) % 7)) % 7;
+  for (let i = 0; i < tail; i++) cells += '<div class="m-cell is-out" aria-hidden="true"></div>';
+  $('#month-grid').innerHTML = cells;
+}
+
+function renderPanel() {
+  const isDetail = mode === 'detail';
+  $('#form-view').hidden = isDetail;
+  $('#detail-view').hidden = !isDetail;
+  if (!isDetail) { $('#dr-eyebrow').textContent = 'Nova reserva'; $('#dr-title').textContent = 'Agendar sala'; return; }
+  const b = bookings.find(x => x.id === selId);
+  if (!b) { mode = 'form'; selId = null; confirming = false; closeDrawer(); renderPanel(); return; }
+  $('#dr-eyebrow').textContent = 'Reserva';
+  $('#dr-title').textContent = b.title || 'Reunião';
+  $('#d-room').textContent = roomName(b.room);
+  $('#d-when').textContent = `${fmtDate(b.date)} · ${b.start}–${b.end}`;
+  $('#d-name').textContent = b.name;
+  $('#d-who').innerHTML = avatar(b.name, 'lg') + `<strong>${esc(b.name)}</strong>`;
+  $('#d-cancel').hidden = confirming;
+  $('#d-confirm').hidden = !confirming;
+  $('#d-keep').hidden = !confirming;
+}
+
+// Primeiro horário livre dentro do funcionamento, a partir de agora (ou 08:00 em outras datas).
+function defaultStart() {
+  if (selDate !== todayIso()) return 480;
+  const m = Math.ceil(nowMin() / STEP) * STEP;
+  if (m < 480) return 480;
+  if (m < 690) return m;
+  if (m < 780) return 780;
+  if (m < 1020) return m;
+  return 480;
+}
+
+// Gaveta: abre por cima da agenda e devolve o foco ao fechar
+let lastFocus = null;
+function openDrawer() {
+  if ($('#drawer').hidden) lastFocus = document.activeElement;
+  $('#scrim').hidden = false;
+  $('#drawer').hidden = false;
+  const first = mode === 'detail' ? $('#d-cancel') : $('#f-room');
+  setTimeout(() => first.focus(), 0);
+}
+function closeDrawer() {
+  if ($('#drawer').hidden) return;
+  closePick(false);
+  $('#scrim').hidden = true;
+  $('#drawer').hidden = true;
+  if (mode === 'detail') { mode = 'form'; selId = null; confirming = false; renderBoard(); }
+  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+}
+let toastTimer = null;
+function toast(text) {
+  const t = $('#toast');
+  t.textContent = text;
+  t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 4000);
+}
+
+function openForm(o = {}, show = true) {
+  mode = 'form'; selId = null; confirming = false;
+  $('#f-room').value = o.room || 'brasil';
+  $('#f-date').value = selDate < todayIso() ? todayIso() : selDate;
+  $('#f-date').min = todayIso();
+  let st = o.start ?? defaultStart();
+  if (!windowOf(st)) st = defaultStart();
+  $('#f-start').value = toHHMM(st);
+  fillEnds(st);
+  const w = windowOf(st);
+  $('#f-end').value = toHHMM(Math.min(st + 60, w[1]));
+  $('#f-title').value = '';
+  showMsg('', false);
+  renderBoard();
+  renderPanel();
+  if (show) openDrawer();
+}
+
+function openDetail(id) {
+  mode = 'detail'; selId = id; confirming = false;
+  renderBoard();
+  renderPanel();
+  openDrawer();
+}
+
+// Banco local (localStorage) com a mesma interface do banco do Claude/Firestore.
+// Para agenda compartilhada entre pessoas, troque localDb() por um banco real (veja o LEIA-ME).
+function localDb() {
+  const KEY = 'ctprice-reservas';
+  const subs = new Set();
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (_) { return {}; } };
+  const save = o => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (_) {} };
+  const snap = () => ({ metadata: { fromCache: false },
+    docs: Object.entries(load()).map(([id, v]) => ({ id, exists: true, data: () => v })) });
+  const emit = () => { const sn = snap(); subs.forEach(f => f(sn)); };
+  window.addEventListener('storage', e => { if (e.key === KEY) emit(); });
+  return { isLocal: true, collection: () => ({
+    onSnapshot(cb) { subs.add(cb); setTimeout(() => cb(snap()), 0); return () => subs.delete(cb); },
+    async add(v) { const o = load(); const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 8); o[id] = v; save(o); emit(); return { id }; },
+    doc: id => ({ async delete() { const o = load(); delete o[id]; save(o); emit(); } }),
+  }) };
+}
+
+// Agenda compartilhada: uma assinatura, atualizada ao vivo para todos.
+const loadTimer = setTimeout(() => {
+  if (!loaded) setStatus('Não foi possível alcançar a agenda agora. Os dados podem estar desatualizados.');
+}, 10000);
+
+(async () => {
+  fillSelects();
+  openForm({}, false);
+  db = (await window.claude?.use('db')) ?? localDb();
+  if (db.isLocal) $('.hint').textContent += ' Modo local: as reservas ficam salvas só neste navegador.';
+  if (!db) {
+    clearTimeout(loadTimer);
+    setStatus('Agenda indisponível nesta visualização. Abra a página pelo link compartilhado.');
+    return;
+  }
+  db.collection('bookings').onSnapshot(snap => {
+    if (!snap.metadata.fromCache) { loaded = true; clearTimeout(loadTimer); setStatus(''); }
+    bookings = snap.docs.filter(d => d.exists).map(d => ({ ...(d.data() || {}), id: d.id }));
+    if (mode === 'detail' && !bookings.some(b => b.id === selId)) closeDrawer();
+    renderBoard();
+    renderPanel();
+  }, e => {
+    clearTimeout(loadTimer);
+    setStatus(errText(e.code));
+  });
+})();
+
+// Navegação: dia a dia na visualização de dia, mês a mês na visualização de mês
+function step(n) {
+  if (view === 'month') {
+    const d = new Date(selDate + 'T12:00:00');
+    d.setDate(1);
+    d.setMonth(d.getMonth() + n);
+    selDate = isoOf(d);
+  } else {
+    selDate = shift(selDate, n);
+  }
+  renderBoard();
+}
+$('#prev').onclick = () => step(-1);
+$('#next').onclick = () => step(1);
+$('#today').onclick = () => { selDate = todayIso(); renderBoard(); };
+$('#date-input').onchange = e => { if (e.target.value) { selDate = e.target.value; renderBoard(); } };
+document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => { view = b.dataset.view; renderBoard(); });
+$('#new').onclick = () => openForm();
+$('#dr-close').onclick = () => closeDrawer();
+$('#scrim').onclick = () => closeDrawer();
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#drawer').hidden && $('#pop').hidden) closeDrawer(); });
+
+// Cliques na grade do dia: reserva abre detalhes; horário livre abre o formulário
+$('#grid').addEventListener('click', e => {
+  const bk = e.target.closest('.bk');
+  if (bk) { openDetail(bk.dataset.id); return; }
+  const col = e.target.closest('.col');
+  if (!col) return;
+  const y = e.clientY - col.getBoundingClientRect().top;
+  const start = START + Math.floor(y / ROW) * STEP;
+  if (!windowOf(start)) return;
+  openForm({ room: col.dataset.room, start });
+});
+
+// Clique em um dia no mês: abre a agenda desse dia
+$('#month-grid').addEventListener('click', e => {
+  const c = e.target.closest('[data-date]');
+  if (!c) return;
+  selDate = c.dataset.date;
+  view = 'day';
+  renderBoard();
+});
+
+$('#f-start').onchange = () => {
+  const s = toMin($('#f-start').value);
+  fillEnds(s);
+  const w = windowOf(s);
+  $('#f-end').value = toHHMM(Math.min(s + 60, w[1]));
+};
+
+// Seletor de analista com foto e busca. Lembra o último analista neste navegador.
+let analyst = '';
+let actIdx = 0;
+let shown = [];
+try { const last = localStorage.getItem('ctprice-analista'); if (ANALYSTS.includes(last)) analyst = last; } catch (_) {}
+function renderPickBtn() {
+  $('#pick-btn').innerHTML = analyst ? avatar(analyst, 'md') + `<span>${esc(analyst)}</span>` : '<span class="ph">Escolha o analista</span>';
+}
+function renderOpts() {
+  const q = fold($('#pick-q').value.trim());
+  shown = ANALYSTS.filter(n => !q || fold(n).includes(q));
+  if (actIdx >= shown.length) actIdx = Math.max(0, shown.length - 1);
+  $('#opts').innerHTML = shown.length ? shown.map((n, i) =>
+    `<li role="option" id="opt-${i}" data-name="${esc(n)}" aria-selected="${n === analyst}" class="${i === actIdx ? 'is-act' : ''}">${avatar(n, 'md')}<span>${esc(n)}</span></li>`).join('')
+    : '<li class="none" aria-disabled="true">Nenhum analista encontrado</li>';
+  $('#pick-q').setAttribute('aria-activedescendant', shown.length ? 'opt-' + actIdx : '');
+  const a = document.getElementById('opt-' + actIdx);
+  if (a) a.scrollIntoView({ block: 'nearest' });
+}
+function openPick() {
+  $('#pop').hidden = false;
+  $('#pick-btn').setAttribute('aria-expanded', 'true');
+  $('#pick-q').value = '';
+  actIdx = Math.max(0, ANALYSTS.indexOf(analyst));
+  renderOpts();
+  $('#pick-q').focus();
+}
+function closePick(focusBtn) {
+  $('#pop').hidden = true;
+  $('#pick-btn').setAttribute('aria-expanded', 'false');
+  if (focusBtn) $('#pick-btn').focus();
+}
+function choose(n) {
+  analyst = n;
+  try { localStorage.setItem('ctprice-analista', n); } catch (_) {}
+  renderPickBtn();
+  closePick(true);
+  if ($('#msg').classList.contains('err')) showMsg('', false);
+}
+$('#pick-btn').onclick = () => ($('#pop').hidden ? openPick() : closePick(false));
+$('#pick-q').oninput = () => { actIdx = 0; renderOpts(); };
+$('#pick-q').onkeydown = e => {
+  if (e.key === 'ArrowDown') { e.preventDefault(); actIdx = Math.min(shown.length - 1, actIdx + 1); renderOpts(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); actIdx = Math.max(0, actIdx - 1); renderOpts(); }
+  else if (e.key === 'Enter') { e.preventDefault(); if (shown[actIdx]) choose(shown[actIdx]); }
+  else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closePick(true); }
+};
+$('#opts').addEventListener('mousedown', e => e.preventDefault());
+$('#opts').addEventListener('click', e => { const li = e.target.closest('[data-name]'); if (li) choose(li.dataset.name); });
+document.addEventListener('click', e => { if (!$('#pop').hidden && !e.target.closest('#picker')) closePick(false); });
+renderPickBtn();
+
+// Reserva com checagem de horário de funcionamento, pausa de almoço e conflito na sala
+$('#f').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (busy) return;
+  const room = $('#f-room').value;
+  const date = $('#f-date').value;
+  const start = $('#f-start').value;
+  const end = $('#f-end').value;
+  const name = analyst;
+  const title = $('#f-title').value.trim();
+  const s = toMin(start), en = toMin(end);
+  const w = windowOf(s);
+  let err = '';
+  if (!date) err = 'Escolha a data.';
+  else if (date < todayIso()) err = 'Não é possível agendar em datas passadas.';
+  else if (date === todayIso() && s < nowMin()) err = 'Esse horário já passou.';
+  else if (!w || en <= s || en > w[1]) err = 'Fora do funcionamento. Reservas podem ser feitas das 08:00 às 11:30 e das 13:00 às 17:30, sem passar do almoço.';
+  else if (!name) err = 'Escolha o analista que vai usar a sala.';
+  else {
+    const c = bookings.find(b => b.room === room && b.date === date && s < toMin(b.end) && en > toMin(b.start));
+    if (c) err = `${roomName(room)} já está reservada das ${c.start} às ${c.end} (${c.name}). Escolha outro horário.`;
+  }
+  if (err) { showMsg(err, true); return; }
+  if (!db) { showMsg('Agenda indisponível nesta visualização.', true); return; }
+
+  busy = true;
+  $('#save').disabled = true;
+  try {
+    await db.collection('bookings').add({ room, date, start, end, name, title, createdAt: new Date().toISOString() });
+    selDate = date;
+    $('#f-title').value = '';
+    closeDrawer();
+    renderBoard();
+    toast(`${roomName(room)} reservada para ${start}–${end}.`);
+  } catch (x) {
+    showMsg(errText(x.code), true);
+  } finally {
+    busy = false;
+    $('#save').disabled = false;
+  }
+});
+
+// Cancelamento em duas etapas, dentro da própria página
+$('#d-back').onclick = () => closeDrawer();
+$('#d-cancel').onclick = () => { confirming = true; renderPanel(); };
+$('#d-keep').onclick = () => { confirming = false; renderPanel(); };
+$('#d-confirm').onclick = async () => {
+  if (busy || !db || !selId) return;
+  busy = true;
+  try {
+    await db.collection('bookings').doc(selId).delete();
+    closeDrawer();
+    toast('Reserva cancelada.');
+  } catch (x) {
+    setStatus(errText(x.code));
+  } finally {
+    busy = false;
+  }
+};
+</script>
+</body>
+</html>
